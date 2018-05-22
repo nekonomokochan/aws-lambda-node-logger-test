@@ -4,7 +4,8 @@
   "description": "Test for aws-lambda-node-logger",
   "private": true,
   "scripts": {
-    "deploy": "serverless deploy -v"
+    "deploy": "serverless deploy -v",
+    "remove": "serverless remove -v"
   },
   "repository": {
     "type": "git",
