@@ -65,3 +65,6 @@ typings/
 # IDEA Setting Files
 .idea
 aws-lambda-node-logger-test.iml
+
+# Serverless directories
+.serverless
