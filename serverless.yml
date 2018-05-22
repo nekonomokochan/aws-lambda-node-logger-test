@@ -1,0 +1,17 @@
+service: aws-lambda-node-logger-test
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: ap-northeast-1
+  stage: dev
+  logRetentionInDays: 30
+
+functions:
+  emergency:
+    handler: handler.emergency
+    events:
+      - http:
+          path: errors/emergency
+          method: get
+          cors: true
