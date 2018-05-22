@@ -1,0 +1,22 @@
+{
+  "name": "aws-lambda-node-logger-test",
+  "version": "1.0.0",
+  "description": "Test for aws-lambda-node-logger",
+  "private": true,
+  "scripts": {
+    "deploy": "serverless deploy -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nekonomokochan/aws-lambda-node-logger-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nekonomokochan/aws-lambda-node-logger-test/issues"
+  },
+  "homepage": "https://github.com/nekonomokochan/aws-lambda-node-logger-test#readme",
+  "devDependencies": {
+    "serverless": "^1.27.2"
+  }
+}
