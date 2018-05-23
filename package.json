@@ -6,6 +6,8 @@
   "scripts": {
     "build": "tsc",
     "deploy": "yarn run build && serverless deploy -v",
+    "logs:js": "serverless logs -f jsTest -t",
+    "logs:ts": "serverless logs -f tsTest -t",
     "remove": "serverless remove -v"
   },
   "repository": {
