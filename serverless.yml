@@ -8,10 +8,17 @@ provider:
   logRetentionInDays: 30
 
 functions:
-  emergency:
-    handler: handler.emergency
+  jsTest:
+    handler: handler.jsTest
     events:
       - http:
-          path: errors/emergency
+          path: tests/js
+          method: get
+          cors: true
+  tsTest:
+    handler: dist/handler.tsTest
+    events:
+      - http:
+          path: tests/ts
           method: get
           cors: true
