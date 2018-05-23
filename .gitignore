@@ -68,3 +68,6 @@ aws-lambda-node-logger-test.iml
 
 # Serverless directories
 .serverless
+
+# TypeScript Output Dir
+dist
