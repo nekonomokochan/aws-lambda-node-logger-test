@@ -9,9 +9,9 @@ provider:
 
 functions:
   emergency:
-    handler: handler.emergency
+    handler: handler.jsTest
     events:
       - http:
-          path: errors/emergency
+          path: tests/js
           method: get
           cors: true

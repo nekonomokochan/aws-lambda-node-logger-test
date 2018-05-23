@@ -1,6 +1,8 @@
 'use strict';
 
-module.exports.emergency = (event, context, callback) => {
+const awsLambdaNodeLogger = require("@nekonomokochan/aws-lambda-node-logger");
+
+module.exports.jsTest = (event, context, callback) => {
   const response = {
     statusCode: 500,
     body: JSON.stringify({
@@ -8,6 +10,8 @@ module.exports.emergency = (event, context, callback) => {
       input: event,
     }),
   };
+
+  awsLambdaNodeLogger.LambdaLogger.alert(response);
 
   callback(null, response);
 };
