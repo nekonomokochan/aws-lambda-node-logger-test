@@ -19,5 +19,8 @@
   "homepage": "https://github.com/nekonomokochan/aws-lambda-node-logger-test#readme",
   "devDependencies": {
     "serverless": "^1.27.2"
+  },
+  "dependencies": {
+    "@nekonomokochan/aws-lambda-node-logger": "^0.0.1"
   }
 }
