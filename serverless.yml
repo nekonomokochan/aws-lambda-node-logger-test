@@ -8,7 +8,7 @@ provider:
   logRetentionInDays: 30
 
 functions:
-  emergency:
+  jsTest:
     handler: handler.jsTest
     events:
       - http:

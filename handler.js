@@ -6,12 +6,15 @@ module.exports.jsTest = (event, context, callback) => {
   const response = {
     statusCode: 500,
     body: JSON.stringify({
-      message: 'emergency test',
+      message: 'JavaScript Test',
       input: event,
     }),
   };
 
-  awsLambdaNodeLogger.LambdaLogger.alert(response);
+  const error = new Error("JavaScript Error Test");
+
+  awsLambdaNodeLogger.LambdaLogger.debug(response);
+  awsLambdaNodeLogger.LambdaLogger.error(error);
 
   callback(null, response);
 };
