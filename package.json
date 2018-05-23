@@ -18,9 +18,14 @@
   },
   "homepage": "https://github.com/nekonomokochan/aws-lambda-node-logger-test#readme",
   "devDependencies": {
-    "serverless": "^1.27.2"
+    "@types/aws-lambda": "^8.10.4",
+    "@types/node": "^10.1.2",
+    "@types/source-map-support": "^0.4.0",
+    "serverless": "^1.27.2",
+    "typescript": "^2.8.3"
   },
   "dependencies": {
-    "@nekonomokochan/aws-lambda-node-logger": "^0.0.1"
+    "@nekonomokochan/aws-lambda-node-logger": "^0.0.1",
+    "source-map-support": "^0.5.6"
   }
 }
