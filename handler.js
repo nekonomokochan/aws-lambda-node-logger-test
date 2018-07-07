@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const awsLambdaNodeLogger = require("@nekonomokochan/aws-lambda-node-logger");
 
@@ -6,7 +6,7 @@ module.exports.jsTest = (event, context, callback) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
-      message: 'JavaScript Test',
+      message: "JavaScript Test",
       input: event,
     }),
   };

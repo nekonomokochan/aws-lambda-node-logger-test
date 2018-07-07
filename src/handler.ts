@@ -1,5 +1,5 @@
-import * as lambda from 'aws-lambda';
-import * as sourceMapSupport from 'source-map-support';
+import * as lambda from "aws-lambda";
+import * as sourceMapSupport from "source-map-support";
 import { LambdaLogger } from "@nekonomokochan/aws-lambda-node-logger";
 
 sourceMapSupport.install();
@@ -8,7 +8,7 @@ export const tsTest = (event: lambda.APIGatewayEvent, context: lambda.Context, c
   const response = {
     statusCode: 200,
     body: JSON.stringify({
-      message: 'TypeScript Test',
+      message: "TypeScript Test",
       input: event,
     }),
   };
