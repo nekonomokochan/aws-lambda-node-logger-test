@@ -28,7 +28,7 @@
     "typescript": "^2.8.3"
   },
   "dependencies": {
-    "@nekonomokochan/aws-lambda-node-logger": "^0.0.1",
+    "@nekonomokochan/aws-lambda-node-logger": "^1.0.0",
     "source-map-support": "^0.5.6"
   }
 }
