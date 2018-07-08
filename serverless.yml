@@ -6,6 +6,9 @@ provider:
   region: ap-northeast-1
   stage: dev
   logRetentionInDays: 30
+  environment:
+    AWS_LAMBDA_NODE_LOGGER_SLACK_TOKEN: ${env:AWS_LAMBDA_NODE_LOGGER_SLACK_TOKEN}
+    AWS_LAMBDA_NODE_LOGGER_SLACK_CHANNEL: ${env:AWS_LAMBDA_NODE_LOGGER_SLACK_CHANNEL}
 
 functions:
   jsTest:
