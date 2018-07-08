@@ -1,10 +1,10 @@
 import * as lambda from "aws-lambda";
 import * as sourceMapSupport from "source-map-support";
-import { LambdaLogger } from "@nekonomokochan/aws-lambda-node-logger";
+import { LambdaLoggerFactory, LogLevel } from "@nekonomokochan/aws-lambda-node-logger";
 
 sourceMapSupport.install();
 
-export const tsTest = (event: lambda.APIGatewayEvent, context: lambda.Context, callback: lambda.Callback) => {
+export const tsTest = async (event: lambda.APIGatewayEvent, context: lambda.Context, callback: lambda.Callback) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
@@ -15,8 +15,38 @@ export const tsTest = (event: lambda.APIGatewayEvent, context: lambda.Context, c
 
   const error = new Error("TypeScript Error Test");
 
-  LambdaLogger.error(error);
-  LambdaLogger.debug(context);
+  const lambdaLogger = LambdaLoggerFactory.create(
+    LogLevel.DEBUG,
+    extractSlackTokenFromEnv(),
+    extractSlackChannelFromEnv()
+  );
+
+  await lambdaLogger.error(error, true);
+  await lambdaLogger.debug(context, true);
 
   callback(undefined, response);
+};
+
+/**
+ * @return {string}
+ */
+const extractSlackTokenFromEnv = (): string => {
+  const slackToken = process.env.AWS_LAMBDA_NODE_LOGGER_SLACK_TOKEN;
+  if (typeof slackToken === "string") {
+    return slackToken;
+  }
+
+  return "";
+};
+
+/**
+ * @return {string}
+ */
+const extractSlackChannelFromEnv = (): string => {
+  const slackChannel = process.env.AWS_LAMBDA_NODE_LOGGER_SLACK_CHANNEL;
+  if (typeof slackChannel === "string") {
+    return slackChannel;
+  }
+
+  return "";
 };
