@@ -19,7 +19,7 @@ functions:
           method: get
           cors: true
   tsTest:
-    handler: dist/handler.tsTest
+    handler: dist/src/handler.tsTest
     events:
       - http:
           path: tests/ts
